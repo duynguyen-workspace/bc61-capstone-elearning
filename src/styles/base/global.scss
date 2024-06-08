@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    .title,
+    .heading {
+        font-family: "Archivo Variable", sans-serif !important;
+    }
+
+    font-family: "Barlow", sans-serif !important;
+}
