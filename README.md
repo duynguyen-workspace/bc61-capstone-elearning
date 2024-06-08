@@ -5,7 +5,7 @@ This project develops a web & mobile application for elearning purpose, demonstr
 ### Install & Run Application:
 1. Set up local repository
 ```
-git clone <REPO_LINK>
+git clone https://github.com/duynguyen-workspace/bc61-capstone-elearning.git
 cd bc61-capstone-elearning
 npm install
 ```
