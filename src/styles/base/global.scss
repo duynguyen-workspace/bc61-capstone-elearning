@@ -17,3 +17,9 @@ body {
 
     font-family: "Barlow", sans-serif !important;
 }
+
+@layer utilities{
+    .container-custom {
+        @apply px-[15px]
+    }
+}
