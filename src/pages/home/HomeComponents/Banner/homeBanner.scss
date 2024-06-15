@@ -27,6 +27,33 @@
             margin-bottom: 18px;
             line-height: 1.1;
         }
+        .banner__form {
+            position: relative;
+            border: 1px solid white;
+            max-width: 400px;
+            padding: 10px;
+            input {
+                background: transparent;
+                width: 50%;
+            }
+            ::placeholder {
+                /* Most modern browsers support this now. */
+                color: white;
+            }
+            ::-webkit-input-placeholder {
+                /* WebKit, Blink, Edge */
+                color: white;
+            }
+            ::-moz-placeholder {
+                /* Mozilla Firefox 19+ */
+                color: white;
+            }
+            .banner__btn {
+                position: absolute;
+                right: 19px;
+                top: 12px;
+            }
+        }
     }
 }
 

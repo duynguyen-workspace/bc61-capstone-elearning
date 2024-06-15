@@ -13,12 +13,14 @@ const HomeBanner = () => {
                     <br />
                     <span>With Certificates & Diplomas </span>
                 </h1>
-                <form>
+                <form className="banner__form">
                     <input
                         type="text"
                         placeholder="What do you want to learn?"
                     />
-                    <i className="fa-solid fa-magnifying-glass"></i>
+                    <button type="button" className="banner__btn">
+                        <i className="fa-solid fa-magnifying-glass"></i>
+                    </button>
                 </form>
             </div>
         </div>

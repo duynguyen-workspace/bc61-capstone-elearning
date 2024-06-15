@@ -2,7 +2,7 @@ import { GROUP_CODE } from "../constants";
 import fetcher from "./fetcher";
 
 /**
- * @description 
+ * @description
  * get all course data
  * @method
  * GET
@@ -14,9 +14,20 @@ export const getCoursesApi = async () => {
         const response = await fetcher.get(
             `/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=${GROUP_CODE}`
         );
-        console.log("response: ", response)
+        // console.log("response: ", response);
         return response.data;
     } catch (exception) {
         throw new Error(exception);
     }
+};
+
+export const coursesApi = {
+    getCategoryCourse: () => {
+        return fetcher.get("/QuanLyKhoaHoc/LayDanhMucKhoaHoc");
+    },
+    getCoursesApi2: () => {
+        return fetcher.get(
+            `/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=${GROUP_CODE}`
+        );
+    },
 };
