@@ -11,7 +11,7 @@ const Category = () => {
         `fa-brands fa-think-peaks`,
     ];
     const [dataCate, setDataCate] = useState([]);
-    console.log(dataCate);
+    // console.log(dataCate);
     useEffect(() => {
         coursesApi
             .getCategoryCourse()
@@ -31,7 +31,7 @@ const Category = () => {
     return (
         <div className="category__container">
             <div className="cate__title text-[#E8E2FF] text-3xl text-center font-bold">
-                Top Most Interesting Occupations
+                Top Most Interesting Courses
             </div>
             <div className="cate__item grid grid-cols-6 gap-6 text-white mt-12">
                 {dataCate.map((item, index) => {

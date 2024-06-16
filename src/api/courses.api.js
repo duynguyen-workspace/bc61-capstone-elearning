@@ -30,4 +30,9 @@ export const coursesApi = {
             `/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=${GROUP_CODE}`
         );
     },
+    getCoursesByCategory: (cate) => {
+        return fetcher.get(
+            `/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc?maDanhMuc=${cate}&MaNhom=${GROUP_CODE}`
+        );
+    },
 };

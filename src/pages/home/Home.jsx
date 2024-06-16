@@ -3,6 +3,7 @@ import { getCoursesApi } from "../../api/courses.api";
 import HomeBanner from "./HomeComponents/Banner/HomeBanner";
 import Category from "./HomeComponents/Category/Category";
 import "./home.scss";
+import Courses from "./HomeComponents/Courses/Courses";
 const Home = () => {
     // useEffect(() => {
     //     getCoursesApi()
@@ -14,6 +15,7 @@ const Home = () => {
         <section className="home">
             <HomeBanner />
             <Category />
+            <Courses />
         </section>
     );
 };
