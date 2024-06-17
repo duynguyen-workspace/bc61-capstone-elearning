@@ -4,6 +4,8 @@ import HomeBanner from "./HomeComponents/Banner/HomeBanner";
 import Category from "./HomeComponents/Category/Category";
 import "./home.scss";
 import Courses from "./HomeComponents/Courses/Courses";
+import Vision from "./HomeComponents/Vision/Vision";
+import HomeEvent from "./HomeComponents/HomeEvent/HomeEvent";
 const Home = () => {
     // useEffect(() => {
     //     getCoursesApi()
@@ -16,6 +18,8 @@ const Home = () => {
             <HomeBanner />
             <Category />
             <Courses />
+            <Vision />
+            <HomeEvent />
         </section>
     );
 };

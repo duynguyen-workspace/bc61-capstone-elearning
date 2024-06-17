@@ -1,13 +1,15 @@
-import useRoutesElements from "./routes/useRoutesElements"
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import useRoutesElements from "./routes/useRoutesElements";
 
 function App() {
-  const routeElements = useRoutesElements()
+    const routeElements = useRoutesElements();
 
-  return (
-    <>
-      {routeElements}
-    </>
-  )
+    return (
+        <>
+            <ScrollToTop />
+            {routeElements}
+        </>
+    );
 }
 
-export default App
+export default App;
