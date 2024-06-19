@@ -1,28 +1,49 @@
-import React, { useEffect, useRef } from "react";
+// eslint-disable-next-line no-unused-vars
+import React, { useCallback, useEffect, useState } from "react";
 import ImgDetail from "../../../public/image/img-detail.png";
 import BannerImg from "./imgs/banner-img.png";
 import Tab from "./components/tabs";
+import ReferenceCourse from "./components/referenceCourses/ReferenceCourse";
+import { useParams } from "react-router-dom";
+import { getCourseDetailApi } from "../../api/courses.api";
 
 const CourseDetail = () => {
-  const sideBarRef = useRef(null);
+  let { courseId } = useParams();
+  const [courseDetail, setCourseDetail] = useState(null);
+  console.log(courseDetail);
+
+  const getCourseDetail = useCallback(async () => {
+    if (!courseId) {
+      return;
+    }
+    try {
+      const res = await getCourseDetailApi(courseId);
+      setCourseDetail(res);
+    } catch (error) {
+      alert(500);
+    }
+  }, [courseId]);
 
   useEffect(() => {
-    if (sideBarRef.current) {
-      console.log(sideBarRef.current.clientHeight);
-    }
-  }, []);
+    getCourseDetail();
+  }, [getCourseDetail]);
+
   return (
-    <section className="course-detail bg-[#000927]">
-      <div className="text-white mb-5 text-[32px] font-bold">
-        <p>LẬP TRÌNH FRONT-END CHUYÊN NGHIỆP</p>
+    <section className="course-detail bg-[#000927] container-custom">
+      <div className="text-[#E8E2FF] mb-5 text-[32px] font-bold pt-10">
+        <p>{courseDetail?.tenKhoaHoc}</p>
       </div>
-      <div className=" py-5 container-custom lg:flex lg:gap-7">
+      <div className=" py-5 lg:flex lg:gap-7">
         {/* detail-left */}
         <div className="lg:basis-0 lg:grow-[2]">
           {/* title  */}
           <div>
             <div>
-              <img src={ImgDetail} alt="" />
+              <img
+                src={courseDetail?.hinhAnh}
+                alt=""
+                style={{ width: "100%" }}
+              />
             </div>
             <div className="my-10 leading-6">
               <p className="text-[#8E88A8] text-[25px] font-bold">
@@ -35,12 +56,12 @@ const CourseDetail = () => {
           </div>
           {/* tab  */}
           <div>
-            <Tab />
+            <Tab courseDetail={courseDetail} />
           </div>
         </div>
         {/* detail-right  */}
         <div className="mt-10 lg:mt-0 lg:basis-0 lg:grow-[1]">
-          <div ref={sideBarRef}>
+          <div>
             {/* Thong tin khoa hoc  */}
             <div className="bg-[#0F1C43] p-7 mb-10">
               <div className="flex gap-1 items-center">
@@ -49,7 +70,7 @@ const CourseDetail = () => {
                 <sup className="text-white">đ</sup>
               </div>
               {/* button  */}
-              <div className="text-[#FF7700] text-[24px] border-solid border-2 py-2 text-center my-10 hover:bg-[#FF7700] hover:text-white hover:border-0">
+              <div className="text-[#FF7700] text-[24px] border-solid border-2 py-2 text-center my-10 cursor-pointer hover:bg-[#FF7700] hover:text-white hover:border-[#FF7700]">
                 ĐĂNG KÝ
               </div>
               {/* Info  */}
@@ -58,7 +79,9 @@ const CourseDetail = () => {
                 <div className="flex justify-between items-center mb-10">
                   <div>
                     <span className="text-[#E8E2FF] me-2">Ghi danh:</span>
-                    <span className="text-white text-[16px]">10 hoc vien</span>
+                    <span className="text-white text-[16px]">
+                      {courseDetail?.soLuongHocVien} hoc vien
+                    </span>
                   </div>
                   <div>
                     <i className="fa-solid fa-user-graduate text-[20px] text-[#FF7700]"></i>
@@ -122,21 +145,25 @@ const CourseDetail = () => {
               <div className="text-[16px] font-light leading-6">
                 Create a landing page for this course to maximize conversion.
               </div>
-              {/* <div className="my-5"> */}
-              <img
-                src={BannerImg}
-                alt=""
-                style={{ height: "200px", width: "300px" }}
-              />
-              {/* </div> */}
+              <div className="my-5">
+                <img
+                  src={BannerImg}
+                  alt=""
+                  style={{ height: "200px", width: "300px" }}
+                />
+              </div>
 
-              <span className="inline-block bg-[#FF7701] border-1 border-solid px-7 py-4">
+              <span className="inline-block bg-[#FF7701] border-1 border-solid px-7 py-4 hover:bg-[#F94C10] cursor-pointer">
                 Try For Free
               </span>
             </div>
           </div>
         </div>
       </div>
+
+      <ReferenceCourse
+        maDanhMuc={courseDetail?.danhMucKhoaHoc?.maDanhMucKhoahoc}
+      />
     </section>
   );
 };

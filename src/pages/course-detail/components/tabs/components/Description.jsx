@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 
-function Description() {
+function Description({ courseDetail }) {
+  const { moTa = "" } = courseDetail || {};
   return (
     <div>
       <div className="text-[#8E88A8] bg-[#0F1C43] p-5 mt-5">
@@ -68,7 +70,7 @@ function Description() {
       </div>
       <div className="text-[#8E88A8] text-[16px] mt-7">
         <p>
-          React.js là thư viện JavaScript phổ biến nhất mà bạn có thể sử dụng và
+          {/* React.js là thư viện JavaScript phổ biến nhất mà bạn có thể sử dụng và
           tìm hiểu ngày nay để xây dựng giao diện người dùng hiện đại, phản ứng
           cho web.Khóa học này dạy bạn về React chuyên sâu, từ cơ bản, từng bước
           đi sâu vào tất cả các kiến ​​thức cơ bản cốt lõi, khám phá rất nhiều
@@ -80,7 +82,8 @@ function Description() {
           React và bạn chỉ ở đây vì một số quảng cáo hoặc "thuật toán" - đừng lo
           lắng: ReactJS là một công nghệ quan trọng với tư cách là một nhà phát
           triển web và trong khóa học này, tôi sẽ cũng giải thích TẠI SAO điều
-          đó lại quan trọng!
+          đó lại quan trọng! */}
+          {moTa}
         </p>
       </div>
     </div>
