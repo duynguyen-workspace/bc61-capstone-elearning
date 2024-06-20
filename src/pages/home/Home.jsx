@@ -6,6 +6,7 @@ import "./home.scss";
 import Courses from "./HomeComponents/Courses/Courses";
 import Vision from "./HomeComponents/Vision/Vision";
 import HomeEvent from "./HomeComponents/HomeEvent/HomeEvent";
+import HomeMobile from "./HomeComponents/HomeMobile/HomeMobile";
 const Home = () => {
     // useEffect(() => {
     //     getCoursesApi()
@@ -20,6 +21,7 @@ const Home = () => {
             <Courses />
             <Vision />
             <HomeEvent />
+            <HomeMobile />
         </section>
     );
 };

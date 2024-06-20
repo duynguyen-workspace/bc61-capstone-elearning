@@ -2,6 +2,8 @@ import "./header.scss";
 import logo from "../../assets/homePageImg/logo.png";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import DropDown from "../DropDownMenu/DropDown";
+import paths from "../../paths";
 
 const Header = () => {
     // Scroll down Header sẽ đổi từ màu transparent thành màu xanh
@@ -16,10 +18,10 @@ const Header = () => {
     };
     window.addEventListener("scroll", changeBackGround);
 
-    // Check Trang hiển thị đang ở trang nào trên navabar => Nếu đang ở trang nào chữ đó sẽ màu vàng
+    // Check Trang hiển thị đang ở trang nào trên navbar => Nếu đang ở trang nào chữ đó sẽ màu vàng
     const checkActive = ({ isActive }) => {
         // console.log(isActive);
-        let className = "font-semibold";
+        let className = "font-semibold pb-5";
         return `${className} ${isActive ? "text-yellow-300" : "text-white"}`;
     };
 
@@ -31,6 +33,16 @@ const Header = () => {
 
     /**Mở login và register ở chế độ máy nhỏ */
     let [openLR, setOpenLR] = useState(false);
+
+    const [isHovered, setIsHovered] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
 
     return (
         <header className={navbar ? "header header__active" : "header"}>
@@ -67,7 +79,9 @@ const Header = () => {
                                 className="mr-3 sm:h-9 w-full h-full"
                                 alt="Logo"
                             />
-                            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">E-Learning</span>
+                            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+                                E-Learning
+                            </span>
                         </NavLink>{" "}
                         <div
                             className={`${
@@ -111,22 +125,48 @@ const Header = () => {
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink className={checkActive}>
+                                    <NavLink
+                                        to={`${paths.COURSES}/BackEnd`}
+                                        className={checkActive}
+                                        onMouseEnter={() => handleMouseEnter()}
+                                        onMouseLeave={() => handleMouseLeave()}
+                                    >
                                         COURSES
                                     </NavLink>
+                                    {isHovered && (
+                                        <div
+                                            onMouseEnter={() =>
+                                                handleMouseEnter()
+                                            }
+                                            onMouseLeave={() =>
+                                                handleMouseLeave()
+                                            }
+                                        >
+                                            <DropDown />
+                                        </div>
+                                    )}
                                 </li>
                                 <li>
-                                    <NavLink className={checkActive}>
+                                    <NavLink
+                                        to={paths.BLOG}
+                                        className={checkActive}
+                                    >
                                         BLOG
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink className={checkActive}>
+                                    <NavLink
+                                        to={paths.EVENT}
+                                        className={checkActive}
+                                    >
                                         EVENT
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink className={checkActive}>
+                                    <NavLink
+                                        to={paths.CONTACT}
+                                        className={checkActive}
+                                    >
                                         CONTACT
                                     </NavLink>
                                 </li>

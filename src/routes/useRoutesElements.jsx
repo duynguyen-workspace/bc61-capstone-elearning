@@ -1,6 +1,8 @@
 import { Navigate, Outlet, useRoutes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import paths from "../paths";
+import Event from "../pages/event/Event";
+import CourseItem from "../components/CoursesItem/CourseItem";
 
 //? LAYOUTS
 const MainLayout = lazy(() => import("../layouts/MainLayout"));
@@ -36,8 +38,8 @@ const ErrorPage = lazy(() => import("../pages/error"));
 /**
  * @description
  * User's authentication for login
- * 
- * @returns 
+ *
+ * @returns
  * ...
  */
 const AuthRouter = () => {
@@ -52,8 +54,8 @@ const AuthRouter = () => {
  * User's authentication for:
  * 1. Add course to cart, visit cart, make payment
  * 2. Access to course video (if enrolled)
- * 
- * @returns 
+ *
+ * @returns
  * ...
  */
 const ClientRouter = () => {
@@ -66,8 +68,8 @@ const ClientRouter = () => {
 /**
  * @description
  * User's authentication for accessing admin dashboard
- * 
- * @returns 
+ *
+ * @returns
  * ...
  */
 const AdminRouter = () => {
@@ -226,7 +228,7 @@ const useRoutesElements = () => {
                                 </Suspense>
                             ),
                         },
-                    ]
+                    ],
                 },
                 {
                     path: paths.ABOUT,
@@ -257,6 +259,22 @@ const useRoutesElements = () => {
                     element: (
                         <Suspense fallback={<div>Loading...</div>}>
                             <ContactPage />
+                        </Suspense>
+                    ),
+                },
+                {
+                    path: paths.EVENT,
+                    element: (
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <Event />
+                        </Suspense>
+                    ),
+                },
+                {
+                    path: `${paths.COURSES}/:courseCategory`,
+                    element: (
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <CourseItem />
                         </Suspense>
                     ),
                 },
