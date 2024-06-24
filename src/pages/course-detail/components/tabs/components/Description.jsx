@@ -20,50 +20,45 @@ function Description({ courseDetail }) {
           <div className="flex items-center gap-3 leading-7 font-light text-[17.6px] mb-3">
             <i className="fa-solid fa-check text-[#FF7700] text-[20px]"></i>
             <p>
-              Xây dựng các ứng dụng web mạnh mẽ, nhanh chóng, thân thiện với
-              người dùng và phản ứng nhanh
+              Đăng ký công việc được trả lương cao hoặc làm freelancer trong một
+              trong những lĩnh vực được yêu cầu nhiều nhất mà bạn có thể tìm
+              thấy trong web dev ngay bây giờ
             </p>
           </div>
           <div className="flex items-center gap-3 leading-7 font-light text-[17.6px] mb-3">
             <i className="fa-solid fa-check text-[#FF7700] text-[20px]"></i>
             <p>
-              Xây dựng các ứng dụng web mạnh mẽ, nhanh chóng, thân thiện với
-              người dùng và phản ứng nhanh
+            Cung cấp trải nghiệm người dùng tuyệt vời bằng cách tận dụng sức mạnh của JavaScript một cách dễ dàng
             </p>
           </div>
           <div className="flex items-center gap-3 leading-7 font-light text-[17.6px] mb-3">
             <i className="fa-solid fa-check text-[#FF7700] text-[20px]"></i>
             <p>
-              Xây dựng các ứng dụng web mạnh mẽ, nhanh chóng, thân thiện với
-              người dùng và phản ứng nhanh
+            Tìm hiểu tất cả về React Hooks và React Components
             </p>
           </div>
           <div className="flex items-center gap-3 leading-7 font-light text-[17.6px] mb-3">
             <i className="fa-solid fa-check text-[#FF7700] text-[20px]"></i>
             <p>
-              Xây dựng các ứng dụng web mạnh mẽ, nhanh chóng, thân thiện với
-              người dùng và phản ứng nhanh
+            Thông thạo chuỗi công cụ hỗ trợ React, bao gồm cú pháp Javascript NPM, Webpack, Babel và ES6 / ES2015
             </p>
           </div>
           <div className="flex items-center gap-3 leading-7 font-light text-[17.6px] mb-3">
             <i className="fa-solid fa-check text-[#FF7700] text-[20px]"></i>
             <p>
-              Xây dựng các ứng dụng web mạnh mẽ, nhanh chóng, thân thiện với
-              người dùng và phản ứng nhanh
+            Nhận ra sức mạnh của việc xây dựng các thành phần có thể kết hợp
             </p>
           </div>
           <div className="flex items-center gap-3 leading-7 font-light text-[17.6px] mb-3">
             <i className="fa-solid fa-check text-[#FF7700] text-[20px]"></i>
             <p>
-              Xây dựng các ứng dụng web mạnh mẽ, nhanh chóng, thân thiện với
-              người dùng và phản ứng nhanh
+            Hãy là kỹ sư giải thích cách hoạt động của Redux cho mọi người, bởi vì bạn biết rất rõ các nguyên tắc cơ bản
             </p>
           </div>
           <div className="flex items-center gap-3 leading-7 font-light text-[17.6px] mb-3">
             <i className="fa-solid fa-check text-[#FF7700] text-[20px]"></i>
             <p>
-              Xây dựng các ứng dụng web mạnh mẽ, nhanh chóng, thân thiện với
-              người dùng và phản ứng nhanh
+            Nắm vững các khái niệm cơ bản đằng sau việc cấu trúc các ứng dụng Redux
             </p>
           </div>
         </div>

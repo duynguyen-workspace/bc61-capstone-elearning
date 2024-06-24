@@ -35,7 +35,9 @@ const ReferenceCourse = ({ maDanhMuc }) => {
           <p className="text-[32px] font-semibold">Khóa học tham khảo</p>
         </div>
         <div className="my-7">
-          <span className="inline-block text-[16px] border-2 border-solid border-[#E8E2FF] px-7 py-3 cursor-pointer hover:bg-[#FF7700] hover:border-[#FF7700]">
+          <span className="inline-block text-[16px] border-2 border-solid border-[#E8E2FF] px-7 py-3 cursor-pointer hover:bg-[#FF7700] hover:border-[#FF7700]" onClick={() => {
+            navigate('/courses')
+          }}>
             Tất Cả Khoá Học
           </span>
         </div>

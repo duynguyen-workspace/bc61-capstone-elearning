@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
-import React, { useCallback, useEffect } from "react";
+import React from "react";
 import BannerContent from "../../../../../../public/image/banner2.jpg";
 import AvtContent from "../../../../../../public/image/avatar2.png";
-import { checkImage } from "../../../../../api/courses.api";
 
 const Content = ({ course }) => {
   const {
@@ -16,11 +15,14 @@ const Content = ({ course }) => {
     <div>
       <div className="mb-10 cursor-pointer">
         <div className="relative">
-          <div>
+          <div
+            style={{ height: 200 }}
+            className="border-2 border-solid border-[#1f3064]"
+          >
             <img
               src={hinhAnh ? hinhAnh : BannerContent}
               alt="none"
-              className="w-full"
+              className="w-full h-full object-contain"
             />
           </div>
           <span className="inline-block border-solid bg-[#FF7700] px-4 py-1 font-black absolute top-3 left-3">
