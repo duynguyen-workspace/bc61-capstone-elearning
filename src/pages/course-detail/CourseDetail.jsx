@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const CourseDetail = () => {
-    return (
-        <section className='course-detail'>
-            Course Detail Page
-        </section>
-    )
-}
+    return <section className="course-detail">Course Detail Page</section>;
+};
 
-export default CourseDetail
+export default CourseDetail;

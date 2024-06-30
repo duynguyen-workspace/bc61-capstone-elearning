@@ -90,7 +90,10 @@ const Header = () => {
                                     : "header__log__res "
                             } flex items-center lg:order-2`}
                         >
-                            <NavLink className="headerlg__item flex items-center">
+                            <NavLink
+                                to={paths.LOGIN}
+                                className="headerlg__item flex items-center"
+                            >
                                 <i className="fa-solid fa-circle-user text-3xl text-gray-300 mr-3"></i>
                                 {/* <i className="fa-regular fa-circle-user text-3xl text-gray-300 mr-3"></i> */}
                                 Log in
@@ -99,7 +102,10 @@ const Header = () => {
                                 I
                             </span>
 
-                            <NavLink className="headerlg__item flex items-center">
+                            <NavLink
+                                to={paths.REGISTER}
+                                className="headerlg__item flex items-center"
+                            >
                                 <i className="fa-regular fa-circle-user text-3xl text-gray-300 mr-3"></i>
                                 Register
                             </NavLink>

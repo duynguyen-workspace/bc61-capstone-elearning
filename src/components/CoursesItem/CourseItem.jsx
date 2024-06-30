@@ -7,7 +7,7 @@ const CourseItem = () => {
     const { courseCategory } = useParams();
     // console.log(courseCategory);
     const [arrCourses, setArrCourses] = useState([]);
-    console.log(arrCourses);
+    // console.log(arrCourses);
     useEffect(() => {
         coursesApi
             .getCoursesByCategory(courseCategory)
@@ -33,12 +33,12 @@ const CourseItem = () => {
                         {courseCategory}
                     </h3>
                     <div className="flex items-center text-[#8e88a8] my-6">
-                        <div>
-                            <i className="fa-solid fa-book-open"></i>
+                        <div className="mr-5">
+                            <i className="fa-solid fa-book-open mr-2"></i>
                             <span>3+ Free Courses</span>
                         </div>
                         <div>
-                            <i className="fa-regular fa-user"></i>
+                            <i className="fa-regular fa-user mr-2"></i>
                             <span>200+ Student</span>
                         </div>
                     </div>
