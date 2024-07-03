@@ -3,16 +3,22 @@
   margin: 0;
   box-sizing: border-box;
   overflow-y: hidden;
-  .animation {
+  .auth-row {
     @media screen and (max-width: 1320px) {
-      display: none;
+      border-radius: 16px;
     }
-  }
-  .auth {
-    @media screen and (max-width: 1320px) {
-      // width: 100% !important;
-      flex: 100%;
-      max-width: 100%;
+    .animation {
+      @media screen and (max-width: 1320px) {
+        display: none;
+      }
+    }
+    .auth {
+      @media screen and (max-width: 1320px) {
+        // width: 100% !important;
+        flex: 100%;
+        max-width: 100%;
+        border-radius: 16px;
+      }
     }
   }
 }

@@ -17,7 +17,7 @@ const AuthLayout = () => {
   return (
     <div className="h-screen w-full bg-gray-50 flex justify-center items-center">
       <div className="container flex justify-center items-center">
-        <Row className="shadow-2xl shadow-orange-500/30 w-[80%] h-[70vh] rounded-2xl">
+        <Row className="shadow-2xl auth-row shadow-orange-500/30 w-[80%] h-[70vh] rounded-2xl">
           <Col
             span={12}
             className="animation flex justify-center items-center bg-orange-300 rounded-l-2xl h-full"

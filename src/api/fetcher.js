@@ -4,28 +4,29 @@ import { LOGIN_USER } from "../constants";
 
 // console.log(import.meta.env.VITE_BEARER);
 const fetcher = axios.create({
-    baseURL: import.meta.env.VITE_URL,
-    headers: {
-        TokenCybersoft: import.meta.env.VITE_TOKEN,
-    },
-    timeout: 30000,
+  baseURL: import.meta.env.VITE_URL,
+  headers: {
+    TokenCybersoft: import.meta.env.VITE_TOKEN,
+    Authorization: import.meta.env.VITE_ACCESS_TOKEN,
+  },
+  timeout: 30000,
 });
 
 fetcher.interceptors.request.use((config) => {
-    // console.log("config: ", config)
-    const user = getLocalStorage(LOGIN_USER);
+  // console.log("config: ", config)
+  const user = getLocalStorage(LOGIN_USER);
 
-    //* Thêm Authorization vào header
-    if (user) {
-        config.headers["Authorization"] = user.accessToken;
-    }
+  //* Thêm Authorization vào header
+  if (user) {
+    config.headers["Authorization"] = user.accessToken;
+  }
 
-    // console.log("login-user: ", user)
-    return config;
+  // console.log("login-user: ", user)
+  return config;
 });
 
 fetcher.interceptors.response.use((response) => {
-    return response;
+  return response;
 });
 
 export default fetcher;
