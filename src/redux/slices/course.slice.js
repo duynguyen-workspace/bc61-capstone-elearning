@@ -27,7 +27,7 @@ export const courseSlice = createSlice({
       state.allCourses = action.payload;
     },
   },
-});
+);
 
 export const { handleSetCourses, handleSetCurrCourse, handleCategoryName } =
     courseSlice.actions;
