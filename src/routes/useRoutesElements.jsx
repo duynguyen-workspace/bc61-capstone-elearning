@@ -1,6 +1,8 @@
 import { Navigate, Outlet, useRoutes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import paths from "../paths";
+import Event from "../pages/event/Event";
+import CourseItem from "../components/CoursesItem/CourseItem";
 
 //? LAYOUTS
 const MainLayout = lazy(() => import("../layouts/MainLayout"));
@@ -81,216 +83,226 @@ const AdminRouter = () => {
 
 const useRoutesElements = () => {
   const elements = useRoutes([
-    {
-      path: "",
-      element: <AuthRouter />,
-      children: [
-        {
+      {
           path: "",
-          element: <AuthLayout />,
+          element: <AuthRouter />,
           children: [
-            {
-              path: paths.LOGIN,
-              index: true,
-              element: (
-                <Suspense fallback={<div>Loading...</div>}>
-                  <LoginPage />
-                </Suspense>
-              ),
-            },
-            {
-              path: paths.REGISTER,
-              element: (
-                <Suspense fallback={<div>Loading...</div>}>
-                  <RegisterPage />
-                </Suspense>
-              ),
-            },
+              {
+                  path: "",
+                  element: <AuthLayout />,
+                  children: [
+                      {
+                          path: paths.LOGIN,
+                          index: true,
+                          element: (
+                              <Suspense fallback={<div>Loading...</div>}>
+                                  <LoginPage />
+                              </Suspense>
+                          ),
+                      },
+                      {
+                          path: paths.REGISTER,
+                          element: (
+                              <Suspense fallback={<div>Loading...</div>}>
+                                  <RegisterPage />
+                              </Suspense>
+                          ),
+                      },
+                  ],
+              },
           ],
-        },
-      ],
-    },
-    {
-      path: "",
-      element: <ClientRouter />,
-      children: [
-        {
-          path: paths.PROFILE,
-          element: (
-            <Suspense fallback={<div>Loading...</div>}>
-              <ProfilePage />
-            </Suspense>
-          ),
-        },
-        {
-          path: paths.CART,
-          element: (
-            <Suspense fallback={<div>Loading...</div>}>
-              <CartPage />
-            </Suspense>
-          ),
-        },
-        {
-          path: paths.PAYMENT,
-          element: (
-            <Suspense fallback={<div>Loading...</div>}>
-              <PaymentPage />
-            </Suspense>
-          ),
-        },
-        {
-          path: `${paths.COURSES}/video/:courseId/:videoId`,
-          element: (
-            <Suspense fallback={<div>Loading...</div>}>
-              <CourseVideoPage />
-            </Suspense>
-          ),
-        },
-      ],
-    },
-    {
-      path: paths.ADMIN,
-      element: <AdminRouter />,
-      children: [
-        {
+      },
+      {
           path: "",
-          element: <AdminLayout />,
+          element: <ClientRouter />,
           children: [
-            {
-              index: true,
-              element: (
-                <Suspense fallback={<div>Loading...</div>}>
-                  <AdminPage />
-                </Suspense>
-              ),
-            },
-            {
-              path: "users",
-              element: (
-                <Suspense fallback={<div>Loading...</div>}>
-                  <UserBoardPage />
-                </Suspense>
-              ),
-            },
-            {
-              path: "courses",
-              element: (
-                <Suspense fallback={<div>Loading...</div>}>
-                  <CourseBoardPage />
-                </Suspense>
-              ),
-            },
-            {
-              path: "user-manager",
-              element: (
-                <Suspense fallback={<div>Loading...</div>}>
-                  <UserManagerPage />
-                </Suspense>
-              ),
-            },
-            {
-              path: "course-manager",
-              element: (
-                <Suspense fallback={<div>Loading...</div>}>
-                  <CourseManagerPage />
-                </Suspense>
-              ),
-            },
+              {
+                  path: paths.PROFILE,
+                  element: (
+                      <Suspense fallback={<div>Loading...</div>}>
+                          <ProfilePage />
+                      </Suspense>
+                  ),
+              },
+              {
+                  path: paths.CART,
+                  element: (
+                      <Suspense fallback={<div>Loading...</div>}>
+                          <CartPage />
+                      </Suspense>
+                  ),
+              },
+              {
+                  path: paths.PAYMENT,
+                  element: (
+                      <Suspense fallback={<div>Loading...</div>}>
+                          <PaymentPage />
+                      </Suspense>
+                  ),
+              },
+              {
+                  path: `${paths.COURSES}/video/:courseId/:videoId`,
+                  element: (
+                      <Suspense fallback={<div>Loading...</div>}>
+                          <CourseVideoPage />
+                      </Suspense>
+                  ),
+              },
           ],
-        },
-      ],
-    },
-    {
-      path: paths.HOME,
-      element: <MainLayout />,
-      children: [
-        {
-          index: true,
-          element: (
-            <Suspense fallback={<div>Loading...</div>}>
-              <HomePage />
-            </Suspense>
-          ),
-        },
-        {
-          path: `${paths.COURSES}`,
-          element: (
-            <Suspense fallback={<div>Loading...</div>}>
-              <TestCompLazy />
-            </Suspense>
-          ),
+      },
+      {
+          path: paths.ADMIN,
+          element: <AdminRouter />,
           children: [
-            {
-              index: true,
-              element: (
-                <Suspense fallback={<div>Loading...</div>}>
-                  <CourseListPage />
-                </Suspense>
-              ),
-            },
-            {
-              path: `detail/:courseId`,
-              element: (
-                <Suspense fallback={<div>Loading...</div>}>
-                  <CourseDetailPage />
-                </Suspense>
-              ),
-            },
+              {
+                  path: "",
+                  element: <AdminLayout />,
+                  children: [
+                      {
+                          index: true,
+                          element: (
+                              <Suspense fallback={<div>Loading...</div>}>
+                                  <AdminPage />
+                              </Suspense>
+                          ),
+                      },
+                      {
+                          path: "users",
+                          element: (
+                              <Suspense fallback={<div>Loading...</div>}>
+                                  <UserBoardPage />
+                              </Suspense>
+                          ),
+                      },
+                      {
+                          path: "courses",
+                          element: (
+                              <Suspense fallback={<div>Loading...</div>}>
+                                  <CourseBoardPage />
+                              </Suspense>
+                          ),
+                      },
+                      {
+                          path: "user-manager",
+                          element: (
+                              <Suspense fallback={<div>Loading...</div>}>
+                                  <UserManagerPage />
+                              </Suspense>
+                          ),
+                      },
+                      {
+                          path: "course-manager",
+                          element: (
+                              <Suspense fallback={<div>Loading...</div>}>
+                                  <CourseManagerPage />
+                              </Suspense>
+                          ),
+                      },
+                  ],
+              },
           ],
-        },
-        {
-          path: paths.ABOUT,
+      },
+      {
+          path: paths.HOME,
+          element: <MainLayout />,
+          children: [
+              {
+                  index: true,
+                  element: (
+                      <Suspense fallback={<div>Loading...</div>}>
+                          <HomePage />
+                      </Suspense>
+                  ),
+              },
+              {
+                  path: `${paths.COURSES}`,
+                  element: (
+                      <Suspense fallback={<div>Loading...</div>}>
+                          <CourseListPage />
+                      </Suspense>
+                  ),
+                  children: [
+                      {
+                          path: `detail/:courseId`,
+                          element: (
+                              <Suspense fallback={<div>Loading...</div>}>
+                                  <CourseDetailPage />
+                              </Suspense>
+                          ),
+                      },
+                  ],
+              },
+              {
+                  path: paths.ABOUT,
+                  element: (
+                      <Suspense fallback={<div>Loading...</div>}>
+                          <AboutPage />
+                      </Suspense>
+                  ),
+              },
+              {
+                  path: paths.BLOG,
+                  element: (
+                      <Suspense fallback={<div>Loading...</div>}>
+                          <BlogPage />
+                      </Suspense>
+                  ),
+              },
+              {
+                  path: paths.GALLERY,
+                  element: (
+                      <Suspense fallback={<div>Loading...</div>}>
+                          <GalleryPage />
+                      </Suspense>
+                  ),
+              },
+              {
+                  path: paths.CONTACT,
+                  element: (
+                      <Suspense fallback={<div>Loading...</div>}>
+                          <ContactPage />
+                      </Suspense>
+                  ),
+              },
+              {
+                  path: paths.EVENT,
+                  element: (
+                      <Suspense fallback={<div>Loading...</div>}>
+                          <Event />
+                      </Suspense>
+                  ),
+              },
+              {
+                  path: `${paths.COURSES}/:courseCategory`,
+                  element: (
+                      <Suspense fallback={<div>Loading...</div>}>
+                          <CourseItem />
+                      </Suspense>
+                  ),
+              },
+          ],
+      },
+      {
+          path: "401",
           element: (
-            <Suspense fallback={<div>Loading...</div>}>
-              <AboutPage />
-            </Suspense>
+              <Suspense fallback={<div>Loading...</div>}>
+                  <ErrorPage message={"401 Unauthorized!"} />
+              </Suspense>
           ),
-        },
-        {
-          path: paths.BLOG,
+      },
+      {
+          path: "*",
           element: (
-            <Suspense fallback={<div>Loading...</div>}>
-              <BlogPage />
-            </Suspense>
+              <Suspense fallback={<div>Loading...</div>}>
+                  <ErrorPage message={"404 Not Found!!!"} />
+              </Suspense>
           ),
-        },
-        {
-          path: paths.GALLERY,
-          element: (
-            <Suspense fallback={<div>Loading...</div>}>
-              <GalleryPage />
-            </Suspense>
-          ),
-        },
-        {
-          path: paths.CONTACT,
-          element: (
-            <Suspense fallback={<div>Loading...</div>}>
-              <ContactPage />
-            </Suspense>
-          ),
-        },
-      ],
-    },
-    {
-      path: "401",
-      element: (
-        <Suspense fallback={<div>Loading...</div>}>
-          <ErrorPage message={"401 Unauthorized!"} />
-        </Suspense>
-      ),
-    },
-    {
-      path: "*",
-      element: (
-        <Suspense fallback={<div>Loading...</div>}>
-          <ErrorPage message={"404 Not Found!!!"} />
-        </Suspense>
-      ),
-    },
+      },
   ]);
 
   return elements;
 };
+
+
 
 export default useRoutesElements;

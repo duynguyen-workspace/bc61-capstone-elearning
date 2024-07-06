@@ -2,6 +2,11 @@ import { ConfigProvider, message } from "antd";
 import useRoutesElements from "./routes/useRoutesElements";
 import { createContext } from "react";
 
+
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import useRoutesElements from "./routes/useRoutesElements";
+
+
 export const AlertMessage = createContext();
 
 function App() {
@@ -29,6 +34,7 @@ function App() {
       }}
     >
       <AlertMessage.Provider value={{ handleAlert }}>
+        <ScrollToTop />
         {contextHolder}
         {routeElements}
       </AlertMessage.Provider>

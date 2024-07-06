@@ -11,4 +11,5 @@ export default {
     GALLERY: "/gallery",
     BLOG: "/blog",
     CONTACT: "/contact",
+    EVENT: "/event",
 };
