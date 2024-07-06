@@ -5,15 +5,13 @@ import { Outlet } from "react-router-dom";
 
 const AdminLayout = () => {
     return (
-        <Row>
+        <Row className="">
             <Col span={4}>
                 <Sidebar />
             </Col>
             <Col span={20}>
-                <main className="w-full min-h-screen bg-gray-200">
-                    ---Admin Layout ---
+                <main className="w-full min-h-screen">
                     <Outlet />
-                    --- ---
                 </main>
             </Col>
         </Row>

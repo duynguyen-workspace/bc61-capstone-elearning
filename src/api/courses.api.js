@@ -14,7 +14,7 @@ export const getCoursesApi = async () => {
         const response = await fetcher.get(
             `/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=${GROUP_CODE}`
         );
-        console.log("response: ", response)
+        // console.log("response: ", response)
         return response.data;
     } catch (exception) {
         throw new Error(exception);

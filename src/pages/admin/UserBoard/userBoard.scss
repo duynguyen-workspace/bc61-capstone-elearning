@@ -1,0 +1,30 @@
+.user-board .user-table .ant-table-wrapper .ant-table .ant-table-content {
+    vertical-align: middle;
+
+    .ant-table-row:not(:last-child) {
+        padding-bottom: 30px;
+    }
+
+    .ant-table-thead tr th {
+        background: none;
+        background-color: #172554;
+        color: white;
+        font-size: 1.2rem;
+        border: none !important;
+    
+        &::before {
+            background-color: transparent !important;
+        }
+    }
+
+    // .ant-table-tbody tr td {
+    //     background-color: rgb(23 37 84);
+    //     color: white;
+    //     font-size: 1.2rem;
+    //     padding-bottom: 10px; /* Adjust padding to accommodate the border */
+    
+    //     &::before {
+    //         background-color: transparent !important;
+    //     }
+    // }
+} 

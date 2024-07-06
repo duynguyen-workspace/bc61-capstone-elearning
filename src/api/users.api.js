@@ -14,6 +14,7 @@ export const getUsersApi = async () => {
         const response = await fetcher.get(
             `/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=${GROUP_CODE}`
         );
+        // console.log("response: ", response)
         return response.data;
     } catch (exception) {
         throw new Error(exception);
