@@ -5,15 +5,28 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    .title,
-    .heading {
-        font-family: "Archivo Variable", sans-serif !important;
-    }
+  .title,
+  .heading {
+    font-family: "Archivo Variable", sans-serif !important;
+  }
 
-    font-family: "Barlow", sans-serif !important;
+  font-family: "Barlow", sans-serif !important;
+}
+
+.eclipse-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@layer utilities {
+  .container-custom {
+    @apply px-[15px];
+  }
 }
