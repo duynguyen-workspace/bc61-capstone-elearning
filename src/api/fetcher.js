@@ -4,9 +4,10 @@ import { LOGIN_USER } from "../constants";
 
 // console.log(import.meta.env.VITE_BEARER);
 const fetcher = axios.create({
-  baseURL: import.meta.env.VITE_URL,
+  baseURL: "https://elearningnew.cybersoft.edu.vn/api",
   headers: {
-    TokenCybersoft: import.meta.env.VITE_TOKEN,
+    TokenCybersoft:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA2MSIsIkhldEhhblN0cmluZyI6IjA3LzEwLzIwMjQiLCJIZXRIYW5UaW1lIjoiMTcyODI1OTIwMDAwMCIsIm5iZiI6MTY5ODUxMjQwMCwiZXhwIjoxNzI4NDA2ODAwfQ.SQTYsMRTWBFJDbt4U59qJzAJXaFEdPSIUv3dFj73h1M",
     Authorization: import.meta.env.VITE_ACCESS_TOKEN,
   },
   timeout: 30000,
