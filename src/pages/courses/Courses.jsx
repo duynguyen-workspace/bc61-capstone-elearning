@@ -3,12 +3,12 @@ import React, { useCallback, useEffect, useState } from "react";
 import { getCourseListApi } from "../../api/courses.api";
 import { useNavigate } from "react-router-dom";
 import Content from "../course-detail/components/referenceCourses/components/Content";
+import "./courses.scss";
 
 const Courses = () => {
   const [pagination, setPagination] = useState({ page: 1, totalPages: 0 });
   const [courseList, setCourseList] = useState([]);
   const navigate = useNavigate();
-  console.log(courseList);
 
   const getCourseList = useCallback(async () => {
     const res = await getCourseListApi(pagination.page);
@@ -41,9 +41,15 @@ const Courses = () => {
   }, [getCourseList, pagination.page]);
   return (
     <section className="courses">
+      <div className="blog__banner">
+        <div className="blogBanner__item">
+          <div className="blogBanner__title">COURSES</div>
+          <hr className="mt-0 mb-4" />
+        </div>
+      </div>
       <div className="bg-[#000927] text-[#E8E2FF] container-custom">
-        <h1 className="text-[48px] mb-2">KHÓA HỌC</h1>
-        <p>BẮT ĐẦU HÀNH TRÌNH NÀO!!!</p>
+        {/* <h1 className="text-[48px] mb-2">KHÓA HỌC</h1> */}
+        <p className="invisible">BẮT ĐẦU HÀNH TRÌNH NÀO!!!</p>
         {/* item  */}
         <div className="my-7 md:flex md:flex-wrap md:items-stretch">
           <div className="md:basis-1/3 lg:basis-1/6 ">
